@@ -121,7 +121,7 @@ for (let i = 0; i < 100; i++){
     let y = Math.random() * innerHeight - (radius * 2) + radius;
     // let dx = 6;
     // let dy = 6;
-    let dx = (Math.random() - 0.5)* 10;
+    let dx = (Math.random() - 0.5) * 10;
     let dy = (Math.random() - 0.5) * 10; 
     circles.push(new Circle(x, y, dx, dy, radius))
     // console.log(circles)
