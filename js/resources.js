@@ -1,13 +1,11 @@
-
-(function () {
+// loads up and stores the images
+(()=>{
     let resourceCache = {};
-    let loading = [];
     let readyCallbacks = [];
 
-    // Load an image url or an array of image urls
-    function load(urlOrArr) {
+    const load = (urlOrArr)=>{
         if (urlOrArr instanceof Array) {
-            urlOrArr.forEach(function (url) {
+            urlOrArr.forEach((url)=> {
                 _load(url);
             });
         }
@@ -16,29 +14,29 @@
         }
     }
 
-    function _load(url) {
-        if (resourceCache[url]) {
-            return resourceCache[url];
+    const _load = (imgUrl)=>{
+        if (resourceCache[imgUrl]) {
+            return resourceCache[imgUrl];
         }
         else {
             let img = new Image();
-            img.onload = function () {
-                resourceCache[url] = img;
+            img.onload = ()=>{
+                resourceCache[imgUrl] = img;
 
                 if (isReady()) {
-                    readyCallbacks.forEach(function (func) { func(); });
+                    readyCallbacks.forEach((func) =>{ func(); });
                 }
             };
-            resourceCache[url] = false;
-            img.src = url;
+            resourceCache[imgUrl] = false;
+            img.src = imgUrl;
         }
     }
 
-    function get(url) {
-        return resourceCache[url];
+    const get = (imgUrl)=>{
+        return resourceCache[imgUrl];
     }
 
-    function isReady() {
+    const isReady = ()=>{
         let ready = true;
         for (let k in resourceCache) {
             if (resourceCache.hasOwnProperty(k) &&
@@ -49,8 +47,8 @@
         return ready;
     }
 
-    function onReady(func) {
-        readyCallbacks.push(func);
+    const onReady = (currFunc)=>{
+        readyCallbacks.push(currFunc);
     }
 
     window.resources = {
