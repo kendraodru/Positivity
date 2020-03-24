@@ -20,7 +20,7 @@ const render = () => {
     }
 
     renderEntities(bullets);
-    // renderEntities(enemies);
+    renderEntities(enemies);
     // renderEntities(positivityBurst);
 };
 
@@ -51,7 +51,16 @@ const reset = () => {
     enemies = [];
     bullets = [];
 
+    for(i=0; i < 10; i++){
+        enemies.push({
+            pos: [Math.random() * canvas.width,
+            Math.random() * (canvas.height - 39)],
+            sprite: new Sprite('img/angry_red_pig.png', [0, 0], [36, 30],
+                6, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+        })
+    }
+
     player.pos = [50, canvas.height / 2];
 };
 
-// idea. create the piggie sprite here 
+

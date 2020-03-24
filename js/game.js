@@ -11,9 +11,11 @@ let player = {
     )
 };
 
-let bullets = [];
-let enemies = [];
-let explosions = [];
+// let bullets = [];
+// let enemies = [];
+// let explosions = [];
+
+
 
 let lastFire = Date.now();
 let gameTime = 0;
@@ -36,7 +38,15 @@ update = (dt) => {
     updateEntities(dt);
 
     // code for my angry piggies to be created
-
+    // for (i = 0; i < 6; i++) {
+    //     enemies.push({
+    //         pos: [canvas.width,
+    //         Math.random() * (canvas.height - 39)],
+    //         sprite: new Sprite('img/angry_red_pig.png', [0, 0], [36, 30],
+    //             6, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+    //     })
+    // };
+  
     // checkCollisions();
 
     scoreEl.innerHTML = score;
@@ -108,7 +118,16 @@ const updateEntities = (dt) => {
         }
     }
 
-    // Update all the enemies
+    for (let i = 0; i < enemies.length; i++) {
+        enemies[i].pos[0] -= enemySpeed * dt;
+        enemies[i].sprite.update(dt);
+
+        // Remove if offscreen
+        if (enemies[i].pos[0] + enemies[i].sprite.size[0] < 0) {
+            enemies.splice(i, 1);
+            i--;
+        }
+    }
 
     // Update all the positivity explosions
     
