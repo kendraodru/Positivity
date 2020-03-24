@@ -3,16 +3,18 @@ const render = () => {
     // ctx.fillStyle = terrainPattern;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    // ctx.fillStyle = 'rgba(0,0,255,1)' //blue
-    // ctx.fillRect(100,100, 30, 30)
-    // ctx.fillStyle='rgba(255,0,0,0.5)' //red
-    // ctx.fillRect(200,300, 100, 100)
-    // ctx.fillStyle ='rgba(0,255,0,0.5)' //green
-    // ctx.fillRect(100,200, 100, 100)
+    // add obstacles 
+    ctx.fillStyle = 'rgba(0,0,255,1)' //blue
+    ctx.fillRect(100,100, 30, 30)
+    ctx.fillStyle='rgba(255,0,0,0.5)' //red
+    ctx.fillRect(200,300, 100, 100)
+    ctx.fillStyle ='rgba(0,255,0,0.5)' //green
+    ctx.fillRect(100,200, 100, 100)
 
     
     let terrainPattern = ctx.createPattern(resources.get('img/blue.png'), 'repeat');
     ctx.fillStyle = terrainPattern;
+    
     if (!isGameOver) {
         renderEntity(player);
     }
@@ -51,3 +53,5 @@ const reset = () => {
 
     player.pos = [50, canvas.height / 2];
 };
+
+// idea. create the piggie sprite here 
