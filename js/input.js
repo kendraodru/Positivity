@@ -1,5 +1,4 @@
 // input function
-
 (()=> {
     let pressedKeys = {};
 

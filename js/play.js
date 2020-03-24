@@ -1,9 +1,18 @@
 // Render everything
 const render = () => {
-    ctx.fillStyle = terrainPattern;
+    // ctx.fillStyle = terrainPattern;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // ctx.fillStyle = 'rgba(0,0,255,1)' //blue
+    // ctx.fillRect(100,100, 30, 30)
+    // ctx.fillStyle='rgba(255,0,0,0.5)' //red
+    // ctx.fillRect(200,300, 100, 100)
+    // ctx.fillStyle ='rgba(0,255,0,0.5)' //green
+    // ctx.fillRect(100,200, 100, 100)
 
-    // Render the player if the game isn't over
+    
+    let terrainPattern = ctx.createPattern(resources.get('img/blue.png'), 'repeat');
+    ctx.fillStyle = terrainPattern;
     if (!isGameOver) {
         renderEntity(player);
     }

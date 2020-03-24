@@ -1,4 +1,3 @@
-
 const requestAnimFrame = (()=> {
     return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
@@ -10,8 +9,7 @@ const requestAnimFrame = (()=> {
         };
 })();
 
-// Canvas
-let canvas = document.createElement("canvas");
+let canvas = document.getElementById('positivity-game')
 let ctx = canvas.getContext("2d");
 canvas.width = 512;
 canvas.height = 480;
@@ -32,11 +30,6 @@ const main = ()=>{
 
 const init = ()=>{
     terrainPattern = ctx.createPattern(resources.get('img/blue.png'), 'repeat');
-
-    // document.getElementById('play-again').addEventListener('click', ()=>{
-    //     reset();
-    // });
-
     reset();
     lastTime = Date.now();
     main();
@@ -46,6 +39,9 @@ resources.load([
     'img/blue.png',
     'img/angry_red_pig.png',
     'img/pink_dude.png',
-    'img/heart.png'
+    'img/heart.png',
+    'img/box_tile.png',
+    'img/Green.png',
+    'img/Pink.png',
 ]);
 resources.onReady(init);
