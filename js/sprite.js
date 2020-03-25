@@ -34,7 +34,7 @@ class Sprite {
 
             let x = this.pos[0];
             let y = this.pos[1];
-
+            // console.log("hi")
             if (this.dir == 'vertical') {
                 y += frame * this.size[1];
             }

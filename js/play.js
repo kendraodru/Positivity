@@ -1,16 +1,16 @@
 // Render everything
 const render = () => {
-    // ctx.fillStyle = terrainPattern;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // ctx.fillStyle = terrainPattern;
     
     // add obstacles 
-    ctx.fillStyle = 'rgba(0,0,255,1)' //blue
-    ctx.fillRect(100,100, 30, 30)
-    ctx.fillStyle='rgba(255,0,0,0.5)' //red
-    ctx.fillRect(200,300, 100, 100)
-    ctx.fillStyle ='rgba(0,255,0,0.5)' //green
-    ctx.fillRect(100,200, 100, 100)
-
+    // ctx.fillStyle = 'rgba(0,0,255,1)' //blue
+    // ctx.fillRect(100,100, 30, 30)
+    // ctx.fillStyle='rgba(255,0,0,0.5)' //red
+    // ctx.fillRect(200,300, 100, 100)
+    // ctx.fillStyle ='rgba(0,255,0,0.5)' //green
+    // ctx.fillRect(100,200, 100, 100)
+    
     
     let terrainPattern = ctx.createPattern(resources.get('img/blue.png'), 'repeat');
     ctx.fillStyle = terrainPattern;
@@ -18,10 +18,9 @@ const render = () => {
     if (!isGameOver) {
         renderEntity(player);
     }
-
+    
     renderEntities(bullets);
-    renderEntities(enemies);
-    // renderEntities(positivityBurst);
+    renderEntities(piggies);
 };
 
 const renderEntities = (list) => {
@@ -37,25 +36,25 @@ const renderEntity = (entity) => {
     ctx.restore();
 }
 
-// Game over
-const gameOver = () => {
 
+const gameOver = () => {
+    // Enter Game logic here TT^TT
 }
 
-// Reset game to original state
+// new Game
 const reset = () => {
     isGameOver = false;
     gameTime = 0;
     score = 0;
 
-    enemies = [];
+    piggies = [];
     bullets = [];
 
     for(i=0; i < 10; i++){
-        enemies.push({
+        piggies.push({
             pos: [Math.random() * canvas.width,
             Math.random() * (canvas.height - 39)],
-            sprite: new Sprite('img/angry_red_pig.png', [0, 0], [36, 30],
+            sprite: new Piggie('img/angry_red_pig.png', [0, 0], [36, 30],
                 6, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
         })
     }
