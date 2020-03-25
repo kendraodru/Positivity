@@ -11,7 +11,7 @@ const requestAnimFrame = (()=> {
 
 let canvas = document.getElementById('positivity-game')
 let ctx = canvas.getContext("2d");
-canvas.width = 600;
+canvas.width = 650;
 canvas.height = 500;
 document.body.appendChild(canvas);
 
@@ -30,9 +30,9 @@ const main = ()=>{
 
 const init = ()=>{
     background = ctx.createPattern(resources.get('img/blue.png'), 'repeat');
-    document.getElementById('play-again').addEventListener('click', () => {
-        reset();
-    });
+    // document.getElementById('play-again').addEventListener('click', () => {
+    //     reset();
+    // });
     reset();
     lastTime = Date.now();
     main();

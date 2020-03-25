@@ -4,15 +4,40 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://d3js.org/d3.v5.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Arvo|BenchNine&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/canvas.css">
+
         <title>Positivity</title>
     </head>
     <body>
+        <header id='header'>
+           Positivity 
+        </header>
         <div id="positivity-points"></div>
-        <canvas id='positivity-game'></canvas>
-        <button id='play-again'>Play Again</button>
-
-        
+        <div id='outer-div-wrap'>
+            <div id="instructions">
+                <div id='goal'>
+                        <h2>Goal</h2>
+                    Oh noo, everyone's been in a pretty bad mood and are stressed out from work.
+                    Luckily you have a big heart and that's filled with positive energy!
+                    <br>
+                    Help cheer everyone up so they can proof back into work and be productive.
+                </div>
+                <div id='controls'>
+                    <h2>Controls</h2>
+                    Use <span id='control-key'>wasd</span> or <span id='control-key'>arrow keys</span> to move around.
+                    Fire positive energy with the <span id='control-key'>space bar</span>.
+                </div>
+            </div>
+            <canvas id='positivity-game'></canvas>
+            <div id='contact'>
+                <h2>Contact Me</h2>
+                <div>
+                    
+                </div>
+            </div>
+            <!-- <button id='play-again'>Play Again</button> -->
+        </div>
         <script type="text/javascript" src="js/resources.js"></script>
         <script type="text/javascript" src="js/input.js"></script>
         <script type="text/javascript" src="js/sprite.js"></script>

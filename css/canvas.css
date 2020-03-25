@@ -1,8 +1,10 @@
 
 canvas {
-    display: block;
+    display: block; 
     margin: auto;
-
+    border: 2px solid rgb(150, 60, 150);
+    box-shadow: 5px;
+    border-radius: 2px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -10,3 +12,38 @@ canvas {
     right: 0;
 }
 
+body{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    font-family:'BenchNine', sans-serif;;
+}
+
+#header{
+    font-size: 50px;
+    text-align: center;
+}
+#positivity-points{
+}
+
+#instructions{
+    font-size: 23px;
+    width: 20vw;
+    padding-left: 3%;
+    position: absolute;
+    top:50px;
+    display: block;
+
+}
+
+.outer-div-wrap{
+    display: flex;
+    flex-direction: row;
+}
+
+
+#contact{
+    position: absolute;
+    top:50px;
+    right:100px;
+    /* bottom:0; */
+}

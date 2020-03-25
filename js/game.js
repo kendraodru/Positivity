@@ -46,7 +46,7 @@ update = (dt) => {
     checkCollisions();
 
 
-    scoreEl.innerHTML = score;
+    scoreEl.innerHTML = `Positivity Points: ${score}`;
 };
 
 const handleInput = (dt) => {
