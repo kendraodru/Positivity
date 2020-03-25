@@ -22,6 +22,7 @@ const main = ()=>{
     let dt = (now - lastTime) / 1000.0;
 
     update(dt);
+
     render();
 
     lastTime = now;
