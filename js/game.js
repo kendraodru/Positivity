@@ -1,5 +1,3 @@
-
-// Game state
 let player = {
     pos: [0, 0],
     sprite: new Sprite(
@@ -13,7 +11,7 @@ let player = {
 
 let bullets = [];
 let piggies = [];
-let explosions = [];
+let positivityPop = [];
 
 
 
@@ -25,19 +23,28 @@ let terrainPattern;
 let posPoints = 0;
 let scoreEl = document.getElementById('positivity-points');
 
-// Speed in pixels per second
 let playerSpeed = 200;
 let bulletSpeed = 500;
 let enemySpeed = 100; //my piggies
 
-// Update game objects
+// update game objects
 update = (dt) => {
     gameTime += dt;
 
     handleInput(dt);
     updateEntities(dt);
+    
+    if (Math.random() < 1 - Math.pow(.993, (gameTime))){
+        piggies.push({
+            pos: [canvas.width,
+            Math.random() * (canvas.height - 39)],
+            sprite: new Sprite('img/angry_red_pig.png', [0, 0], [36, 30],
+            6, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+        })
+    }
 
     checkCollisions();
+
 
     scoreEl.innerHTML = score;
 };
@@ -86,7 +93,7 @@ const handleInput = (dt) => {
 }
 
 const updateEntities = (dt) => {
-    // Update the player sprite animation
+
     player.sprite.update(dt);
 
     // Update all the heart bullets
@@ -119,7 +126,15 @@ const updateEntities = (dt) => {
         }
     }
 
-    // Update all the positivity explosions
+
+    for (let i = 0; i < positivityPop.length; i++) {
+        positivityPop[i].sprite.update(dt);
+
+        if (positivityPop[i].sprite.done) {
+            positivityPop.splice(i, 1);
+            i--;
+        }
+    }
     
 }
 
@@ -128,7 +143,7 @@ const collides = (x, y, rightXCoord, btmRight, leftXCoord, y2, r2, btmLeft) => {
         btmRight <= y2 || y > btmLeft);
 }
 
-const boxCollides = (pos, size, pos2, size2) => {
+const frameCollides = (pos, size, pos2, size2) => {
     return collides(pos[0], pos[1],
         pos[0] + size[0], pos[1] + size[1],
         pos2[0], pos2[1],
@@ -147,7 +162,7 @@ const checkCollisions = () => {
             let pos2 = bullets[j].pos;
             let size2 = bullets[j].sprite.size;
 
-            if (boxCollides(pos, size, pos2, size2)) {
+            if (frameCollides(pos, size, pos2, size2)) {
                 // Remove the enemy
                 piggies.splice(i, 1);
                 i--;
@@ -156,13 +171,13 @@ const checkCollisions = () => {
                 score += 100;
 
                 // Add an explosion
-                explosions.push({
+                positivityPop.push({
                     pos: pos,
-                    sprite: new Sprite('img/sprites.png',
-                        [0, 117],
-                        [39, 39],
-                        16,
-                        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                    sprite: new Sprite('img/collected.png',
+                        [0,0],
+                        [32, 32],
+                        10,
+                        [0, 1, 2, 3, 4, 5],
                         null,
                         true)
                 });
@@ -173,7 +188,7 @@ const checkCollisions = () => {
             }
         }
 
-        if (boxCollides(pos, size, player.pos, player.sprite.size)) {
+        if (frameCollides(pos, size, player.pos, player.sprite.size)) {
             gameOver();
         }
     }
@@ -194,22 +209,3 @@ const checkPlayerBounds = () => {
         player.pos[1] = canvas.height - player.sprite.size[1];
     }
 }
-
-
-// const checkPiggiesBounds = piggies => {
-//     piggies.forEach((pig)=>{
-//         if (pig.pos[0] < 0) {
-//             pig.pos[0] = 0;
-//         }
-//         else if (pig.pos[0] > canvas.width - pig.sprite.size[0]) {
-//             pig.pos[0] = canvas.width - pig.sprite.size[0];
-//         }
-
-//         if (pig.pos[1] < 0) {
-//             pig.pos[1] = 0;
-//         }
-//         else if (pig.pos[1] > canvas.height - pig.sprite.size[1]) {
-//             pig.pos[1] = canvas.height - pig.sprite.size[1];
-//         }
-//     })
-// }

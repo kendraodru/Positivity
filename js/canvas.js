@@ -11,11 +11,11 @@ const requestAnimFrame = (()=> {
 
 let canvas = document.getElementById('positivity-game')
 let ctx = canvas.getContext("2d");
-canvas.width = 512;
-canvas.height = 480;
+canvas.width = 600;
+canvas.height = 500;
 document.body.appendChild(canvas);
 
-// The main game loop
+
 let lastTime;
 const main = ()=>{
     let now = Date.now();
@@ -29,7 +29,10 @@ const main = ()=>{
 };
 
 const init = ()=>{
-    terrainPattern = ctx.createPattern(resources.get('img/blue.png'), 'repeat');
+    background = ctx.createPattern(resources.get('img/blue.png'), 'repeat');
+    document.getElementById('play-again').addEventListener('click', () => {
+        reset();
+    });
     reset();
     lastTime = Date.now();
     main();
@@ -40,8 +43,8 @@ resources.load([
     'img/angry_red_pig.png',
     'img/pink_dude.png',
     'img/heart.png',
-    'img/box_tile.png',
-    'img/Green.png',
-    'img/Pink.png',
+    'img/collected.png',
+    'img/green_pig.png',
+    'img/Purple.png',
 ]);
 resources.onReady(init);

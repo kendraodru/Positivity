@@ -50,5 +50,5 @@ class Sprite {
     }
 
 };
-// export default Sprite
+
 window.Sprite = Sprite;
