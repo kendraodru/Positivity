@@ -6,8 +6,6 @@ canvas {
     box-shadow: 5px;
     border-radius: 2px;
     position: absolute;
-    top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
 }
@@ -23,6 +21,9 @@ body{
     text-align: center;
 }
 #positivity-points{
+    position: absolute;
+    top:3px;
+    left: 10px;
 }
 
 #instructions{
@@ -30,9 +31,9 @@ body{
     width: 20vw;
     padding-left: 3%;
     position: absolute;
-    top:50px;
     display: block;
-
+    top: 50px;
+    bottom: 0;
 }
 
 .outer-div-wrap{
@@ -41,9 +42,38 @@ body{
 }
 
 
-#contact{
+#high-scores{
     position: absolute;
     top:50px;
-    right:100px;
-    /* bottom:0; */
+    right:30px;
+    bottom:0;
+    font-size: 23px;
+    border:1px solid aqua;
+    width: 20vw;
+    padding-left: 3%;
+
 }
+
+#contact{
+    position: absolute;
+    bottom: 0;
+    bottom:2%;
+    left: 35%;
+}
+#contact-wrap{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid blue; */
+    width: 30vw;
+    /* margin-bottom: 3%; */
+}
+
+.fab{
+    font-size: 50px;
+    color: black;
+}
+#icon :hover{
+    color: rgb(194,89,201);
+}
+
+
