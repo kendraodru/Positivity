@@ -43,6 +43,8 @@ const reset = () => {
     player.pos = [50, canvas.height / 2];
 };
 
+// EVENT LISTENERS
+
 document.getElementById('play-music-icon').addEventListener("click", (e) => {
 
     let music = document.getElementById('play-music');
