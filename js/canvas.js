@@ -30,15 +30,7 @@ const main = ()=>{
 
     lastTime = now;
     requestAnimFrame(main);
-    // playAudio();
 };
-
-const playAudio = ()=>{
-    document.getElementById('play-music').play()
-}
-
-
-
 
 
 const init = ()=>{
@@ -63,53 +55,32 @@ resources.curry([
 ]);
 
 resources.onReady(init);
-// resources.onReady(init);
 
-// EVENT LISTENER
+// EVENT LISTENERS
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById('play-music-icon').addEventListener("click",(e)=>{
-        let music = document.getElementById('play-music');
-        let icon = document.getElementById('fas fa-volume-mute');
-        // console.log(music)
-        e.preventDefault();
-        if (music.muted === false){
-            console.log('mute')
-            console.log(icon)
-            
-            music.muted = false;
-            icon[0].setAttribute("class", "fas fa-volume-mute");
-            icon = document.getElementById('fas fa-volume-mute');
-            console.log('hi')
-        }else if(music.muted === true){
-            console.log('unmute')
-            console.log(icon)
+// document.getElementById('play-music-icon').addEventListener("click",(e)=>{
+    
+//     let music = document.getElementById('play-music');
+//     let icon = document.getElementById('volume-icon');
 
-            document.getElementById('play-music').play()
-            music.muted = false;
-            icon[0].setAttribute("class", "fas fa-volume-up");
-            icon = document.getElementById('fas fa-volume-up');
-            console.log('bye')
-        }
-        
-    })
-})
+//     e.preventDefault();
+//     if (music.muted === false){
+//         console.log('mute')
+//         console.log(icon)
 
-// <i class="fas fa-volume-mute"></i> the class i want to us
-
-// const whattado = document.getElementById('instructions')
-// $("document").ready({
-//     $("whattado").trigger('click')
-// })
-// document.getElementById('play-music-icon')
-// document.getElementById('mute-audio').addEventListener("click", (e) => {
-//     const music = document.getElementById("music");
-//     if (music.muted === false) {
 //         music.muted = true;
-//         document.getElementById('mute-audio-img').src = "./assets/img/icons/music-off.png";
-//     }
-//     else {
+//         icon.setAttribute("class", "fas fa-volume-mute");
+//         icon = document.getElementById('volume-icon');
+//         console.log('hi')
+//     }else if(music.muted === true){
+//         console.log('unmute')
+//         console.log(icon)
+
+//         document.getElementById('play-music').play()
 //         music.muted = false;
-//         document.getElementById('mute-audio-img').src = "./assets/img/icons/music-on.png";
+//         icon.setAttribute("class", "fas fa-volume-up");
+//         icon = document.getElementById('volume-icon');
+//         console.log('bye')
 //     }
-// });
+    
+// })
