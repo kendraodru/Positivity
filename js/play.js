@@ -1,10 +1,10 @@
+
 const render = () => {
     ctx.fillRect(0, 0, canvas.width, canvas.height);    
     ctx.fillStyle = background;
     if (!isGameOver) {
         renderEntity(player);
     }
-    
     renderEntities(bullets);
     renderEntities(piggies);
     renderEntities(positivityPop);
@@ -25,10 +25,14 @@ const renderEntity = (entity) => {
 
 
 const gameOver = () => {
+    document.getElementById('game-over').style.display = 'block';
+    document.getElementById('game-over-cover').style.display = 'block';
     isGameOver = true;
 }
 
 const reset = () => {
+    document.getElementById('game-over').style.display = 'none';
+    document.getElementById('game-over-cover').style.display = 'none';
     isGameOver = false;
     gameTime = 0;
     score = 0;

@@ -7,7 +7,6 @@
         <script src="https://kit.fontawesome.com/b964b5d871.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Arvo|BenchNine&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/canvas.css">
-
         <title>Positivity</title>
     </head>
     <body>
@@ -15,19 +14,30 @@
            Positivity 
         </div>
         <div id="positivity-points"></div>
+         <!-- <script>window.onload = function () {
+                document.getElementById("play-music").play();
+            }</script> -->
+        <!-- <audio id='play-music' allow='autoplay' src="music.mp3">
+
+        </audio>  -->
+
+        <audio autoplay loop id="play-music">
+            <source src="music.mp3">
+        </audio>
+
         <div id='outer-div-wrap'>
             <div id="instructions">
                 <div id='goal'>
                         <h2>Goal</h2>
-                    Oh noo, everyone's been in a pretty bad mood and are stressed out from work.
+                    Oh noo, everyone has been stressed out and in a pretty bad mood.
                     Luckily you have a big heart that's filled with positive energy!
                     <br>
                     Help cheer everyone up so they can proof back into work and be productive.
                 </div>
                 <div id='controls'>
                     <h2>Controls</h2>
-                    Use <span id='control-key'>wasd</span> or <span id='control-key'>arrow keys</span> to move around.
-                    Fire positive energy with the <span id='control-key'>space bar</span>.
+                    Use wasd key or arrow keys to move around.
+                    Fire positive energy with the space bar.
                 </div>
             </div>
             <canvas id='positivity-game'>
@@ -43,13 +53,19 @@
                     <a id='icon' href="https://github.com/kendraodru"><i class="fab fa-github"></i></a>
                     <a id='icon' href="https://angel.co/kendra-odrunia"><i class="fab fa-angellist"></i></a>
                     <a id='icon' href="https://www.linkedin.com/in/kendra-odrunia-9272441a4/"><i class="fab fa-linkedin"></i></a>
-                    
-                    
-                    
                 </div>
             </div>
             <!-- <button id='play-again'>Play Again</button> -->
+            <div id="game-over-cover">
+            </div>
+            
+            <div id="game-over">
+                <h1>GAME OVER</h1>
+                <button id="play-again">Play Again</button>
+            </div>
         </div>
+        <!-- <script src="audio/music.mp3"></script>
+        <script src="audio/bac_music.mp3"></script> -->
         <script type="text/javascript" src="js/resources.js"></script>
         <script type="text/javascript" src="js/input.js"></script>
         <script type="text/javascript" src="js/sprite.js"></script>

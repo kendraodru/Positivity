@@ -3,18 +3,18 @@
     let resourceCache = {};
     let readyCallbacks = [];
 
-    const load = (urlOrArr)=>{
+    const curry = (urlOrArr)=>{
         if (urlOrArr instanceof Array) {
             urlOrArr.forEach((url)=> {
-                _load(url);
+                _curry(url);
             });
         }
         else {
-            _load(urlOrArr);
+            _curry(urlOrArr);
         }
     }
 
-    const _load = (imgUrl)=>{
+    const _curry = (imgUrl)=>{
         if (resourceCache[imgUrl]) {
             return resourceCache[imgUrl];
         }
@@ -50,11 +50,17 @@
     const onReady = (currFunc)=>{
         readyCallbacks.push(currFunc);
     }
+    
+    const playAudio = () => {
+        document.getElementById('play-music').play()
+    }
 
     window.resources = {
-        load: load,
+        curry: curry,
         get: get,
         onReady: onReady,
-        isReady: isReady
+        isReady: isReady,
+        music: playAudio
     };
 })();
+

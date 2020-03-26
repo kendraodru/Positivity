@@ -13,7 +13,7 @@ canvas {
 body{
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    font-family:'BenchNine', sans-serif;;
+    font-family:'BenchNine', sans-serif;
 }
 
 #header{
@@ -63,9 +63,7 @@ body{
 #contact-wrap{
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid blue; */
     width: 30vw;
-    /* margin-bottom: 3%; */
 }
 
 .fab{
@@ -76,4 +74,41 @@ body{
     color: rgb(194,89,201);
 }
 
+
+
+#game-over, #game-over-cover {
+    margin: auto;
+    width: 650px;
+    height: 505px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: none;
+}
+
+#game-over-cover {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    opacity: 0.5;
+}
+
+#game-over {
+    text-align: center;
+    color: black;
+
+}
+
+#game-over h1 {
+    font-size: 70px;
+}
+
+#play-again{
+    font-size: 25px;
+    width: 125px;
+    border-radius: 2px;
+    font-family:'BenchNine', sans-serif;
+    border: 1px solid black;
+    box-shadow: black;
+}
 
