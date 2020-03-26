@@ -74,8 +74,6 @@ body{
     color: rgb(194,89,201);
 }
 
-
-
 #game-over, #game-over-cover {
     margin: auto;
     width: 650px;
@@ -112,3 +110,11 @@ body{
     box-shadow: black;
 }
 
+.fas {
+    font-size: 50px;
+    color: black;
+}
+
+#play-music-icon :hover{
+    color: rgb(194,89,201);
+}
