@@ -1,3 +1,5 @@
+
+// boilerplate code
 const requestAnimFrame = (()=> {
     return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
@@ -8,7 +10,7 @@ const requestAnimFrame = (()=> {
             window.setTimeout(callback, 1000 / 60);
         };
 })();
-
+// create me canvas lad
 let canvas = document.getElementById('positivity-game')
 let ctx = canvas.getContext("2d");
 
@@ -17,6 +19,7 @@ canvas.height = 500;
 document.body.appendChild(canvas);
 
 
+// Woozz, me game loop
 let lastTime;
 const main = ()=>{
     let now = Date.now();
@@ -49,20 +52,19 @@ const init = ()=>{
 }
 
 
+resources.curry([
+    'img/blue.png',
+    'img/angry_red_pig.png',
+    'img/pink_dude.png',
+    'img/heart.png',
+    'img/collected.png',
+    'img/green_pig.png',
+    'img/Purple.png',
+]);
 
+// resources.onReady(init);
 
 // document.addEventListener("DOMContentLoaded", () => {
-    resources.curry([
-        'img/blue.png',
-        'img/angry_red_pig.png',
-        'img/pink_dude.png',
-        'img/heart.png',
-        'img/collected.png',
-        'img/green_pig.png',
-        'img/Purple.png',
-    ]);
     resources.onReady(init);
-    // document.getElementById("play-music").play();
-// })
-// 
 
+// })

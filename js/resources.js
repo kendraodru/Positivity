@@ -24,7 +24,9 @@
                 resourceCache[imgUrl] = img;
 
                 if (isReady()) {
-                    readyCallbacks.forEach((func) =>{ func(); });
+                    readyCallbacks.forEach((func) =>{ 
+                    func();
+                    });
                 }
             };
             resourceCache[imgUrl] = false;
