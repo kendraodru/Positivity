@@ -8,6 +8,7 @@ canvas {
     position: absolute;
     left: 0;
     right: 0;
+    top: 70px;
 }
 
 body{
@@ -55,11 +56,12 @@ body{
 
 #contact{
     position: absolute;
-    bottom: 0;
-    bottom:2%;
+    bottom:1%;
+    
     left: 35%;
 }
 #contact-wrap{
+    /* margin-top:2%; */
     display: flex;
     justify-content: space-between;
     width: 30vw;
