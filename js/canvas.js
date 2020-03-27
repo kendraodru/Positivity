@@ -51,7 +51,7 @@ resources.curry([
     'img/heart.png',
     'img/collected.png',
     'img/green_pig.png',
-    'img/Purple.png',
+    // 'img/Purple.png',
 ]);
 
 resources.onReady(init);
